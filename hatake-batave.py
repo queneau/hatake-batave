@@ -11,8 +11,8 @@ td = soup.find_all("td", class_ = "year")
 batave = []
 
 for record in td:
-    alice = record.find_all("td")
-    batave.append(float(alice[19].string))
+    years = record.find_all("td")
+    batave.append(float(years[19].string))
 
 plt.plot(batave)
 plt.savefig('figure.png')
