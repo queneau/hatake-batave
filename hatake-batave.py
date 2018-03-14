@@ -1,5 +1,7 @@
 import urllib.request
 from bs4 import BeautifulSoup
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 html =  urllib.request.urlopen("http://npb.jp/bis/players/31235113.html")
@@ -13,4 +15,4 @@ for record in td:
     batave.append(float(alice[19].string))
 
 plt.plot(batave)
-plt.show()
+plt.savefig('figure.png')
